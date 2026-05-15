@@ -1,0 +1,66 @@
+# Bandit Level 4 → Level 5
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in the only human-readable file inside the `inhere` directory.
+
+---
+
+## Challenge
+This level required identifying which file was human-readable.  
+Some files contained unreadable data, while one file contained normal ASCII text.
+
+I may not have used the fastest method, but I used commands I already understood to work through the challenge step by step.
+
+---
+
+## Steps I Took
+
+First, I moved to the home directory:
+
+cd ~
+
+Then I listed the files and directories:
+
+ls
+
+I saw the `inhere` directory and moved into it:
+
+cd inhere
+
+I listed the files inside the directory:
+
+ls
+
+I then checked the file types using the `file` command:
+
+file ./-file07
+
+This showed that `-file07` was an ASCII text file, while the other files were listed as data files.
+
+After identifying the human-readable file, I used:
+
+cat ./-file07
+
+This displayed the password for the next level.
+
+---
+
+## Password for Level 5
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+---
+
+## Commands Learned
+
+### cd
+The `cd` command changes directories.
+
+### ls
+The `ls` command lists files and directories in the current location.
+
+### file
+The `file` command identifies the type of a file, such as ASCII text, data, or executable files.
+
+### cat
+The `cat` command displays the contents of a file.

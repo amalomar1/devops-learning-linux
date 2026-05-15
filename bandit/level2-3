@@ -1,0 +1,56 @@
+# Bandit Level 2 → Level 3
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in a file called `--spaces in this filename--` located in the home directory.
+
+---
+
+## Challenge
+This level involved working with a filename that contained spaces.  
+I did not find this level too difficult because I already had some experience working with files that contain spaces in Linux.
+
+I understood that spaces in filenames need to be handled carefully so Linux reads the whole filename as one string.
+
+---
+
+## Steps I Took
+
+First, I moved to the home directory:
+
+cd ~
+
+Then I listed the files to confirm the file existed:
+
+ls
+
+To read the contents of the file, I used:
+
+cat ./"--spaces in this filename--"
+
+This command successfully displayed the password for the next level.
+
+I used quotation marks so Linux would treat the entire filename as one piece of text instead of separating the words by spaces.
+
+---
+
+## Password for Level 3
+MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+---
+
+## Commands Learned
+
+### cd ~
+The `cd` command changes directories.  
+`cd ~` moves to the user's home directory.
+
+### ls
+The `ls` command lists files and directories in the current location.
+
+### cat
+The `cat` command displays the contents of a file.
+
+### "./filename"
+Quotation marks are used when filenames contain spaces.  
+This allows Linux to read the entire filename correctly as one string.

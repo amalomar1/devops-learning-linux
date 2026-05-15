@@ -1,0 +1,64 @@
+# Bandit Level 3 → Level 4
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in a hidden file inside the `inhere` directory.
+
+---
+
+## Challenge
+This level introduced hidden files in Linux.  
+Hidden files usually begin with a dot (`.`), which means they are not shown with a normal `ls` command.
+
+I needed to navigate into the correct directory and display hidden files.
+
+---
+
+## Steps I Took
+
+First, I returned to the home directory:
+
+cd ~
+
+Then I listed the files and directories:
+
+ls
+
+I saw a directory called `inhere`, so I moved into it:
+
+cd inhere
+
+To display hidden files, I used:
+
+ls -a
+
+This showed a hidden file called:
+
+...Hiding-From-You
+
+I then used the `cat` command to read the contents of the file:
+
+cat ...Hiding-From-You
+
+This displayed the password for the next level.
+
+---
+
+## Password for Level 4
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+---
+
+## Commands Learned
+
+### cd
+The `cd` command is used to change directories.
+
+### ls
+The `ls` command lists files and folders in the current directory.
+
+### ls -a
+The `-a` option shows hidden files and directories, including files beginning with a dot (`.`).
+
+### cat
+The `cat` command displays the contents of a file.

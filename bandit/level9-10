@@ -1,0 +1,57 @@
+# Bandit Level 9 → Level 10
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in the file `data.txt` in one of the few human-readable strings, preceded by several `=` characters.
+
+---
+
+## Challenge
+This level was more confusing because the file contained mostly unreadable or binary data.
+
+At first, I experimented with several commands to try and identify readable text or lines containing the `=` character.
+
+Some of the commands I tried included:
+
+sort data.txt | strings "="
+
+file data.txt | grep "="
+
+grep "ASCII" data.txt
+
+However, these attempts did not return the correct result.
+
+Through experimenting, I realised that the important clue in the challenge was the phrase “human-readable strings”. This led me to understand that I needed to extract readable text from the file first before searching for the `=` symbols.
+
+---
+
+## Steps I Took
+
+I used the following command:
+
+strings data.txt | grep "="
+
+This command extracted readable text strings from the file and then searched for lines containing the `=` character.
+
+The output displayed the password for the next level.
+
+---
+
+## Password for Level 10
+FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+---
+
+## Commands Learned
+
+### strings
+The `strings` command extracts human-readable text from binary or unreadable files.
+
+### grep
+The `grep` command searches for specific text patterns inside input or files.
+
+### |
+The pipe symbol (`|`) sends the output of one command into another command.
+
+### strings data.txt | grep "="
+This command extracted readable strings from the file and filtered the lines containing `=` characters.

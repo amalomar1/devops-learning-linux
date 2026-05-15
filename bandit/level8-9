@@ -1,0 +1,54 @@
+# Bandit Level 8 → Level 9
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in the file `data.txt` and was the only line of text that appeared only once.
+
+---
+
+## Challenge
+This level required identifying the unique line in a file that contained many repeated lines.
+
+At first, I thought about using commands I already knew, such as:
+
+cat data.txt | wc -m
+
+because I knew the `wc` command can count characters, words, or lines. However, I realised that the challenge was more specific because it required finding the only line that appeared once rather than simply counting text.
+
+This made me think more carefully about how to filter and organise repeated lines in Linux.
+
+---
+
+## Steps I Took
+
+To solve the challenge, I used the following command:
+
+sort data.txt | uniq -u
+
+This command first sorted the file alphabetically and then displayed only the unique line that appeared once.
+
+The output displayed the password for the next level.
+
+---
+
+## Password for Level 9
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+---
+
+## Commands Learned
+
+### sort
+The `sort` command organises lines of text alphabetically or numerically.
+
+### uniq
+The `uniq` command filters repeated lines in a file.
+
+### uniq -u
+The `-u` option displays only lines that appear once.
+
+### |
+The pipe symbol (`|`) sends the output of one command into another command.
+
+### sort data.txt | uniq -u
+This command sorted the file and displayed the only unique line in `data.txt`.

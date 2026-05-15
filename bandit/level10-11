@@ -1,0 +1,51 @@
+# Bandit Level 10 → Level 11
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in the file `data.txt`, which contained Base64 encoded data.
+
+---
+
+## Challenge
+At first, I thought this level was very straightforward because the challenge clearly mentioned Base64 encoding.
+
+I initially used:
+
+base64 data.txt
+
+This returned encoded-looking text:
+
+VkdobElIQmhjM04zYjNKa0lHbHpJR1IwVWpFM00yWmFTMkl3VWxKelJFWlRSM05uTWxKWGJuQk9W
+bW96Y1ZKeUNnPT0K
+
+However, I realised this was not the actual password. After doing some research, I learned that the `base64` command by itself encodes data rather than decoding it.
+
+I then discovered that the `-d` option is required to decode Base64 data.
+
+---
+
+## Steps I Took
+
+I used the following command:
+
+base64 -d data.txt
+
+The `-d` option decoded the contents of the file and displayed the password for the next level.
+
+---
+
+## Password for Level 11
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+---
+
+## Commands Learned
+
+### base64
+The `base64` command is used to encode and decode Base64 data.
+
+### -d
+The `-d` option tells the command to decode the data instead of encoding it.
+
+### base64 -d data.txt
+This command decoded the Base64 encoded contents of `data.txt` and revealed the password.

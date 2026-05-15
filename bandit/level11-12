@@ -1,0 +1,73 @@
+# Bandit Level 11 → Level 12
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in the file `data.txt`, where all lowercase (`a-z`) and uppercase (`A-Z`) letters had been rotated by 13 positions.
+
+---
+
+## Challenge
+This level introduced text transformation commands, which I was quite new to.  
+The challenge also provided a list of commands that might help solve the level, including:
+
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, and xxd
+
+I was glad to come across this because it introduced me to commands I had not used before.
+
+To understand the `tr` command better, I used a helpful website that explains Linux commands and examples:
+
+https://tldr.inbrowser.app/pages/common/tr
+
+While reading through the examples, I found this command:
+
+tr < path/to/file "[:lower:]" "[:upper:]"
+
+which translates lowercase letters into uppercase letters.
+
+I experimented with this idea using the challenge file.
+
+---
+
+## Steps I Took
+
+I used the following command:
+
+tr < data.txt "[:lower:]" "[:upper:]"
+
+This converted all lowercase letters in the file to uppercase letters.
+
+The output became:
+
+GUR CNFFJBEQ VF 7K16JARUVV5LXVUJFSSVDBBTAHGLW9D4
+
+At this point, I realised the text was still encoded and that the challenge was referring to ROT13, where letters are rotated by 13 positions in the alphabet.
+
+I then used the correct ROT13 translation command:
+
+tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
+
+This decoded the text and revealed the password for the next level.
+
+---
+
+## Password for Level 12
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+---
+
+## Commands Learned
+
+### tr
+The `tr` command translates or replaces characters from standard input.
+
+### tr "[:lower:]" "[:upper:]"
+Converts lowercase letters into uppercase letters.
+
+### ROT13
+ROT13 rotates letters by 13 positions in the alphabet.
+
+### tr 'A-Za-z' 'N-ZA-Mn-za-m'
+This command performs ROT13 translation on text.
+
+### <
+The `<` symbol redirects a file into a command as input.

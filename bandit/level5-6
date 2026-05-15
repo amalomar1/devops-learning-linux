@@ -1,0 +1,60 @@
+# Bandit Level 5 → Level 6
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored somewhere under the `inhere` directory and had the following properties:
+- Human-readable
+- 1033 bytes in size
+- Not executable
+
+---
+
+## Challenge
+This level was more difficult because there were many files inside different directories.  
+I found it challenging to identify the correct file size because checking every file manually would have taken too long.
+
+To help solve the challenge, I explored the `man` command to look for options related to file size and bytes.
+
+---
+
+## Steps I Took
+
+I focused on one of the key properties first: the file being exactly 1033 bytes in size.
+
+I used the following command:
+
+find . -size 1033c
+
+This searched for files that were exactly 1033 bytes.
+
+The command returned:
+
+./maybehere07/.file2
+
+I then used the `cat` command to read the file contents:
+
+cat ./maybehere07/.file2
+
+This displayed the password for the next level.
+
+---
+
+## Password for Level 6
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+---
+
+## Commands Learned
+
+### find
+The `find` command searches for files and directories.
+
+### -size 1033c
+The `-size` option searches for files by size.  
+The `c` stands for bytes, so `1033c` means exactly 1033 bytes.
+
+### cat
+The `cat` command displays the contents of a file.
+
+### man
+The `man` command opens the manual pages for Linux commands and helps explain available options and usage.

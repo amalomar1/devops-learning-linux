@@ -1,0 +1,47 @@
+# Bandit Level 1 → Level 2
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in a file called `-` located in the home directory.
+
+---
+
+## Challenge
+This level was more confusing because the file name was a symbol (`-`) instead of normal text.  
+At first this made it harder because `-` is usually treated as an option or command argument in Linux.
+
+I had to think about different ways to access the file correctly.
+
+---
+
+## Steps I Took
+
+First, I listed the files in the directory to confirm the file existed:
+
+ls
+
+I remembered that `./` refers to the current directory, so I used it before the filename.
+
+Command used:
+cat ./-
+
+This successfully displayed the password for the next level.
+
+---
+
+## Password for Level 2
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+---
+
+## Commands Learned
+
+### ls
+The `ls` command lists files and directories in the current location.
+
+### cat
+The `cat` command displays the contents of a file.
+
+### ./
+`./` refers to the current directory.  
+Using `./-` tells Linux that `-` is a filename in the current directory instead of treating it as an option.

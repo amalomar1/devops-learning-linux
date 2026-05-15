@@ -1,0 +1,55 @@
+# Bandit Level 0 → Level 1
+
+## Objective
+The goal of this level was to find the password for the next level.  
+The password was stored in a file called `readme` located in the home directory.
+
+---
+
+## Connecting to the Server
+I connected to the Bandit server using SSH.
+
+Command used:
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+
+Password used:
+bandit0
+
+---
+
+## Steps I Took
+
+First, I moved to the home directory:
+
+cd ~
+
+Then I listed the files in the directory:
+
+ls
+
+I saw a file called `readme`.
+
+To read the contents of the file, I used:
+
+cat readme
+
+This displayed the password for the next level.
+
+---
+
+## Password for Level 1
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+---
+
+## Commands Learned
+
+### cd ~
+The `cd` command changes directories.  
+`cd ~` moves to the user's home directory.
+
+### ls
+The `ls` command lists files and folders in the current directory.
+
+### cat
+The `cat` command displays the contents of a file.
